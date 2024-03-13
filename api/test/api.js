@@ -3,7 +3,7 @@ import { Client } from "@gadget-client/tag-products-automagically";
 
 // an API client created using the GADGET_TEST_API_KEY environment variable
 export const api = new Client({
-  environment: "development",
+  environment: process.env.GADGET_ENV,
   authenticationMode: {
     apiKey: process.env.GADGET_TEST_API_KEY,
   },

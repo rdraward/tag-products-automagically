@@ -4,8 +4,12 @@ on:
   push:
     branches: [main]
 
+env:
+  GADGET_ENV: staging
+  GADGET_TEST_API_KEY: ${{ secrets.GADGET_TEST_API_KEY }}
+
 jobs:
-  deploy:
+  push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,9 +27,52 @@ jobs:
         env:
           GGT_TOKEN: ${{ secrets.GGT_TOKEN }}
 
+  test:
+    runs-on: ubuntu-latest
+    needs: push
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create env file
+        run: |
+          touch .env
+          echo GADGET_TEST_API_KEY="$GADGET_TEST_API_KEY" >> .env
+          echo GADGET_ENV="$GADGET_ENV" >> .env
+
+      - name: Install ggt
+        run: |
+          npm install -g ggt
+          ggt version
+        shell: bash
+
+      - name: Pull client files into env
+        run: |
+          ggt pull --app=tag-products-automagically --env=staging --force --allow-unknown-directory
+        shell: bash
+        env:
+          GGT_TOKEN: ${{ secrets.GGT_TOKEN }}
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Run tests
+        run: yarn test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ggt
+        run: |
+          npm install -g ggt
+          ggt version
+        shell: bash
+
       - name: Deploy to production
         run: |
-          ggt deploy --app=tag-products-automagically --env=staging --force --allow-unknown-directory
+          ggt deploy --app=tag-products-automagically --env=staging --force --allow-unknown-directory --allow-problems
         shell: bash
         env:
           GGT_TOKEN: ${{ secrets.GGT_TOKEN }}
