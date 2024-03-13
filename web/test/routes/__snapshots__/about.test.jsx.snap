@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`snapshot test for frontend/routes/index.jsx > should render the Index component 1`] = `
+<div>
+  <h1>
+    About
+  </h1>
+  <div>
+    Shop Information
+  </div>
+  <div>
+    <p>
+      This is a simple Shopify Embedded App.
+    </p>
+  </div>
+</div>
+`;

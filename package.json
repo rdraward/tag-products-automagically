@@ -1,0 +1,35 @@
+{
+  "name": "tag-products-automagically",
+  "version": "0.1.0",
+  "description": "Internal package for Gadget app tag-products-automagically (Development environment)",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "vite:build": "NODE_ENV=production vite build",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@gadget-client/tag-products-automagically": "link:.gadget/client",
+    "@gadgetinc/react": "^0.15.3",
+    "@gadgetinc/react-shopify-app-bridge": "^0.14.1",
+    "@shopify/app-bridge-react": "4.0.0",
+    "@shopify/polaris": "^12.0.0",
+    "@shopify/polaris-icons": "^8.1.0",
+    "dotenv": "^16.4.5",
+    "gadget-server": "link:.gadget/server",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6.15.0",
+    "react-test-renderer": "^18.2.0",
+    "shopify-api-node": "^3.12.6",
+    "vitest": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "3.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
+  }
+}
