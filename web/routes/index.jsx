@@ -59,7 +59,7 @@ export default function () {
 
   // render the page, using data, fetching, and error from the useFindMany, useAction, and useActionForm hooks to display different widgets
   return (
-    <Page title="Riley's keyword manager">
+    <Page title="Riley's awesome keyword manager">
       <Layout>
         <Layout.Section>
           <TitleBar title="Manage keywords" />
