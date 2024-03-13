@@ -27,6 +27,6 @@ describe("test the shopifyProduct utils", () => {
       connections,
     });
 
-    expect(mockUpdate).toHaveBeenCalledWith(0, { tags: "product" });
+    expect(mockUpdate).toHaveBeenCalledWith(1, { tags: "product" });
   });
 });
