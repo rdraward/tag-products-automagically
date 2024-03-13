@@ -1,5 +1,10 @@
 import { useCallback } from "react";
-import { useFindMany, useAction, useActionForm, Controller } from "@gadgetinc/react";
+import {
+  useFindMany,
+  useAction,
+  useActionForm,
+  Controller,
+} from "@gadgetinc/react";
 import { TitleBar } from "@shopify/app-bridge-react";
 import {
   Banner,
@@ -32,9 +37,17 @@ export default function () {
   const [{ data, fetching, error }] = useFindMany(api.allowedTag);
 
   // useActionForm used to manage form state and submission for creating new tags
-  const { submit, control, reset, error: createError, formState } = useActionForm(api.allowedTag.create);
+  const {
+    submit,
+    control,
+    reset,
+    error: createError,
+    formState,
+  } = useActionForm(api.allowedTag.create);
   // the useAction hook is used for deleting existing tags
-  const [{ error: deleteTagError }, deleteTag] = useAction(api.allowedTag.delete);
+  const [{ error: deleteTagError }, deleteTag] = useAction(
+    api.allowedTag.delete
+  );
 
   const removeTag = useCallback(
     async (id) => {
@@ -46,7 +59,7 @@ export default function () {
 
   // render the page, using data, fetching, and error from the useFindMany, useAction, and useActionForm hooks to display different widgets
   return (
-    <Page title="Keyword manager">
+    <Page title="Riley's keyword manager">
       <Layout>
         <Layout.Section>
           <TitleBar title="Manage keywords" />
@@ -59,7 +72,9 @@ export default function () {
             }}
           >
             <FormLayout>
-              {createError && <ErrorBanner title="Error adding keyword" error={createError} />}
+              {createError && (
+                <ErrorBanner title="Error adding keyword" error={createError} />
+              )}
               <Controller
                 name="keyword"
                 control={control}
@@ -77,7 +92,11 @@ export default function () {
                       helpText={<span>Add a keyword</span>}
                       disabled={formState.isSubmitting}
                       connectedRight={
-                        <Button variant="primary" submit disabled={formState.isSubmitting}>
+                        <Button
+                          variant="primary"
+                          submit
+                          disabled={formState.isSubmitting}
+                        >
                           Add keyword
                         </Button>
                       }
@@ -96,8 +115,15 @@ export default function () {
                 Existing keywords
               </Text>
               {fetching && <Spinner />}
-              {error && <ErrorBanner title="Error reading tags" error={error} />}
-              {deleteTagError && <ErrorBanner title="Error removing keyword" error={deleteTagError} />}
+              {error && (
+                <ErrorBanner title="Error reading tags" error={error} />
+              )}
+              {deleteTagError && (
+                <ErrorBanner
+                  title="Error removing keyword"
+                  error={deleteTagError}
+                />
+              )}
               <InlineStack gap="100">
                 {data?.map((allowedTag, i) => (
                   <Tag key={i} onRemove={() => removeTag(allowedTag.id)}>
