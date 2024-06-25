@@ -278,7 +278,25 @@
   version "0.0.0"
   uid ""
 
-"@gadgetinc/api-client-core@0.15.16", "@gadgetinc/api-client-core@^0.15.13", "@gadgetinc/api-client-core@^0.15.16":
+"@gadgetinc/api-client-core@0.15.19":
+  version "0.15.19"
+  resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.15.19.tgz#7751d80d90fc81cf5770bed8c1dcde6aaf13620b"
+  integrity sha512-Fr8IMPtCbB1Wy18oX5A44qFo5mSXLlqak/XTN/TbHaLVDRWFjpHxoMnIoY1e69GSpsJFcsnOhOJ37KVLUKK7+g==
+  dependencies:
+    "@n1ru4l/graphql-live-query" "^0.10.0"
+    "@n1ru4l/graphql-live-query-patch-jsondiffpatch" "^0.8.0"
+    "@n1ru4l/push-pull-async-iterable-iterator" "^3.2.0"
+    "@urql/core" "^4.0.10"
+    cross-fetch "^3.1.5"
+    graphql "^16.8.1"
+    graphql-ws "^5.13.1"
+    isomorphic-ws "^5.0.0"
+    klona "^2.0.6"
+    tiny-graphql-query-compiler "^0.2.2"
+    tslib "^2.6.2"
+    ws "^8.13.0"
+
+"@gadgetinc/api-client-core@^0.15.13", "@gadgetinc/api-client-core@^0.15.16":
   version "0.15.16"
   resolved "https://registry.yarnpkg.com/@gadgetinc/api-client-core/-/api-client-core-0.15.16.tgz#79556492b28bb3e127f5fd014e78245283b77bb7"
   integrity sha512-ZHiR/hhO8tZUacmsoiDCOkIJZT0JABppe70iJRD9F0Wf0P0sYvA+BvBnUmXJA+A0qKtCvihp2+lE/z0SVzN0tA==
@@ -296,13 +314,13 @@
     tslib "^2.6.2"
     ws "^8.13.0"
 
-"@gadgetinc/react-shopify-app-bridge@^0.14.1":
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/@gadgetinc/react-shopify-app-bridge/-/react-shopify-app-bridge-0.14.1.tgz#e720615b42e54cea742b616876aad155d7229fe3"
-  integrity sha512-NyFsGUWl77c0ArlIzACQE7UYbNdCE+3n5171B8O9bz7N5SC9aOLGfcm7AokIYOM+U8xwTyfP606GYVE9S6YWmw==
+"@gadgetinc/react-shopify-app-bridge@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gadgetinc/react-shopify-app-bridge/-/react-shopify-app-bridge-0.15.2.tgz#e84bb8ee6e14f559716c7b05b6efa70260c4aee5"
+  integrity sha512-bon7osa4hvfXfAB143bTuuJb04OW1NZCc7Dd7dv8ChpRYNVEIe92c6kdiRsxHQAR7/yUzPmc7p7l2UJKQ7kwHQ==
   dependencies:
     "@gadgetinc/api-client-core" "^0.15.13"
-    crypto-js "^4.1.1"
+    crypto-js "^4.2.0"
     tslib "^2.6.2"
 
 "@gadgetinc/react@^0.15.3":
@@ -886,7 +904,7 @@ cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-crypto-js@^4.1.1:
+crypto-js@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.2.0.tgz#4d931639ecdfd12ff80e8186dba6af2c2e856631"
   integrity sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==
